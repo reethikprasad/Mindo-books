@@ -17,10 +17,14 @@
 
   <body>
     <!-- START HERE -->
-    <nav class="mav-bar navbar-expand-md navbar-light fixed-top py-4">
+    <nav
+      class="navbar navbar-expand-md navbar-light fixed-top py-4"
+      id="main-nav"
+    >
       <div class="container">
-        <a href="#home" id="home" class="navbar-brand">
-          <img src="img/mlogo1.png" width="150" height="50" alt="" />
+        <a href="#home" class="navbar-brand">
+          <img src="img/mlogo.png" width="50" height="50" alt="" />
+          <h3 class="d-inline align-middle">Mizuxe</h3>
         </a>
         <button
           class="navbar-toggler"
@@ -47,6 +51,35 @@
         </div>
       </div>
     </nav>
+
+    <!-- Showcase -->
+
+    <section class="showcase py5-5">
+      <div class="primary-overlay text-white">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <h1 class="display-2 mt-5 pt-5">Do What You Dream Of...</h1>
+              <p class="lead">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam,
+                tempora!
+              </p>
+              <a href="#" class="btn btn-outline-secondary btn-lg text-white">
+                <i class="fas fa-arrow-right"></i> Read More
+              </a>
+            </div>
+            <div class="col-md-6">
+              <img
+                id="poster"
+                src="img/book2.jpg"
+                alt=""
+                class="img-fluid d-none d-lg-block"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <script
       src="http://code.jquery.com/jquery-3.3.1.min.js"
