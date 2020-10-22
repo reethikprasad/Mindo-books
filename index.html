@@ -10,13 +10,17 @@
       integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
       crossorigin="anonymous"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Charmonman&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Bootstrap Theme</title>
+    <title>Mindo</title>
   </head>
 
-  <body>
-    <!-- START HERE -->
+  <body id="home" data-spy="scroll" data-target="#main-nav">
     <nav
       class="navbar navbar-expand-md navbar-light fixed-top py-4"
       id="main-nav"
@@ -24,7 +28,7 @@
       <div class="container">
         <a href="#home" class="navbar-brand">
           <img src="img/mlogo.png" width="50" height="50" alt="" />
-          <h3 class="d-inline align-middle">Mizuxe</h3>
+          <h3 class="d-inline align-middle">Mindo</h3>
         </a>
         <button
           class="navbar-toggler"
@@ -258,7 +262,7 @@
     </section>
 
     <!--Authors-->
-    <section id="author" class="py-5 text-center">
+    <section id="authors" class="py-5 text-center">
       <div class="container">
         <div class="row">
           <div class="col">
@@ -386,7 +390,7 @@
                   alt=""
                   class="img-fluid rounded-circle w-50 mb-3"
                 />
-                <h3>Rachel Green</h3>
+                <h3>Willam Tray</h3>
                 <h5 class="text-muted">Designer</h5>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -416,6 +420,98 @@
       </div>
     </section>
 
+    <!--conact-->
+
+    <section id="contact" class="bg-light py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-9">
+            <h3>Get In Touch</h3>
+            <p class="lead">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione,
+              temporibus!
+            </p>
+            <form>
+              <div class="input-group input-group-lg mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fas fa-user"></i>
+                  </span>
+                </div>
+                <input type="text" class="form-control" placeholder="Name" />
+              </div>
+
+              <div class="input-group input-group-lg mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                </div>
+                <input type="text" class="form-control" placeholder="Email" />
+              </div>
+
+              <div class="input-group input-group-lg mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fas fa-pencil-alt"></i>
+                  </span>
+                </div>
+                <textarea
+                  class="form-control"
+                  placeholder="Message"
+                  rows="5"
+                ></textarea>
+              </div>
+
+              <input
+                type="submit"
+                value="Submit"
+                class="btn btn-primary btn-block btn-lg"
+              />
+            </form>
+          </div>
+
+          <div class="col-lg-3 align-self-center">
+            <img src="img/mlogo.png" alt="" class="img-fluid" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="main-footer" class="py-5 bg-primary text-white">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col">
+            <p class="footer-heart">
+              Made with
+              <g-emoji
+                class="g-emoji"
+                alias="heart"
+                fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png"
+              >
+                <img
+                  class="emoji"
+                  alt="heart"
+                  height="20"
+                  width="20"
+                  src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png"
+              /></g-emoji>
+              by
+              <a
+                href="http://reethik.ml/"
+                target="#"
+                id="reethik"
+                class="text-light"
+              >
+                Reethik</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <script
       src="http://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -435,6 +531,28 @@
     <script>
       // Get the current year for the copyright
       $("#year").text(new Date().getFullYear());
+
+      // Init Scrollspy
+      $("body").scrollspy({ target: "#main-nav" });
+
+      // Smooth Scrolling
+      $("#main-nav a").on("click", function (event) {
+        if (this.hash !== "") {
+          event.preventDefault();
+
+          const hash = this.hash;
+
+          $("html, body").animate(
+            {
+              scrollTop: $(hash).offset().top,
+            },
+            800,
+            function () {
+              window.location.hash = hash;
+            }
+          );
+        }
+      });
     </script>
   </body>
 </html>
